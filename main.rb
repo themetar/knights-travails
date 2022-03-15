@@ -8,3 +8,11 @@ L_OFFSETS = [-2, 2].product([-1, 1]) + [-1, 1].product([-2, 2])
 def moves_from(file, rank)
   L_OFFSETS.map { |f, r| [f + file, r + rank] }.select { |f, r| f.between?(0, 7) && r.between?(0, 7) }
 end
+
+def pair_to_index(file, rank)
+  rank * 8 + file
+end
+
+def index_to_pair(index)
+  [index % 8, index / 8]
+end
